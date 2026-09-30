@@ -108,6 +108,75 @@ footer svg {
 .controls {
   padding: 22px 0;
 }
+.install-command {
+  margin-bottom: 10px;
+}
+.install-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px;
+  gap: 6px;
+  width: 100%;
+}
+.install-input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: var(--dial-radius);
+  background: var(--dial-surface);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 11px;
+  text-align: left;
+}
+.install-copy {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transition:
+    background-color 150ms ease,
+    transform 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+.install-copy:active {
+  transform: scale(0.96);
+}
+.install-input:focus-visible,
+.install-copy:focus-visible {
+  outline: 2px solid var(--dial-text-primary);
+  outline-offset: 2px;
+}
+.copy-symbol {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: scale(0.25);
+  filter: blur(4px);
+  transition:
+    opacity 150ms cubic-bezier(0.2, 0, 0, 1),
+    transform 150ms cubic-bezier(0.2, 0, 0, 1),
+    filter 150ms cubic-bezier(0.2, 0, 0, 1);
+}
+.copy-symbol[data-visible="true"] {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+.install-feedback {
+  display: block;
+  margin-top: 6px;
+  color: var(--dial-text-primary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+@media (prefers-reduced-motion: reduce) {
+  .install-copy,
+  .copy-symbol {
+    transition: none;
+  }
+  .install-copy:active {
+    transform: none;
+  }
+}
 #speech {
   display: block;
   resize: vertical;

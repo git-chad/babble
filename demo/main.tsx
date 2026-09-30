@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client"
 import "dialkit/styles.css"
 import { type Babble, type BabbleProgress, createBabble } from "../src/index"
 import { Character } from "./character"
+import { InstallCommand } from "./install-command"
 import "./style.css"
 
 const PANEL = "babble-voice-v1"
@@ -85,6 +86,7 @@ function App() {
       <main className="playground">
         <Character progressRef={progressRef} />
         <aside className="controls" aria-label="Speech playground">
+          <InstallCommand />
           <form
             className="dialkit-root"
             data-theme="light"
