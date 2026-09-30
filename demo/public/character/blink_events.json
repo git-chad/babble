@@ -1,0 +1,20 @@
+{
+  "clip": "Idle",
+  "duration_seconds": 4.0,
+  "fps": 24,
+  "start_frame": 1,
+  "loop_end_frame": 97,
+  "base_expression": 0,
+  "blink_expression": 6,
+  "events": [
+    {
+      "start_seconds": 2.3333333333333335,
+      "end_seconds": 2.4583333333333335,
+      "start_frame": 57,
+      "end_frame_exclusive": 60,
+      "expression_index": 6
+    }
+  ],
+  "glb_contains": "skeletal animation; atlas image with blink cell; no material UV animation",
+  "runtime": "Apply index 6 only during each half-open interval, using clip-local time modulo 4 seconds; otherwise preserve caller base expression."
+}

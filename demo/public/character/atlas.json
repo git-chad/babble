@@ -1,0 +1,92 @@
+{
+  "atlas": "expresiones.png",
+  "svg_master": "expresiones.svg",
+  "width": 2048,
+  "height": 1024,
+  "columns": 4,
+  "rows": 2,
+  "cell_pixels": 512,
+  "padding_min_pixels": 64,
+  "origin": "top-left (row 0 at top)",
+  "index_formula": "row * 4 + column",
+  "uv_origin": "bottom-left (Blender / glTF texcoord before image convention conversion)",
+  "uv_scale": [0.25, 0.5],
+  "uv_offset_formula": ["column / 4", "1 - (row + 1) / 2"],
+  "model_face_uv": "local 0..1; atlas mapping lives only on FACE_ATLAS material",
+  "expressions": [
+    {
+      "index": 0,
+      "name": "neutro",
+      "column": 0,
+      "row": 0,
+      "uv_offset": [0.0, 0.5],
+      "gltf_uv_offset": [0.0, 0.0]
+    },
+    {
+      "index": 1,
+      "name": "risa",
+      "column": 1,
+      "row": 0,
+      "uv_offset": [0.25, 0.5],
+      "gltf_uv_offset": [0.25, 0.0]
+    },
+    {
+      "index": 2,
+      "name": "sorpresa",
+      "column": 2,
+      "row": 0,
+      "uv_offset": [0.5, 0.5],
+      "gltf_uv_offset": [0.5, 0.0]
+    },
+    {
+      "index": 3,
+      "name": "enojo",
+      "column": 3,
+      "row": 0,
+      "uv_offset": [0.75, 0.5],
+      "gltf_uv_offset": [0.75, 0.0]
+    },
+    {
+      "index": 4,
+      "name": "duda",
+      "column": 0,
+      "row": 1,
+      "uv_offset": [0.0, 0.0],
+      "gltf_uv_offset": [0.0, 0.5]
+    },
+    {
+      "index": 5,
+      "name": "incomodidad",
+      "column": 1,
+      "row": 1,
+      "uv_offset": [0.25, 0.0],
+      "gltf_uv_offset": [0.25, 0.5]
+    },
+    {
+      "index": 6,
+      "name": "parpadeo",
+      "column": 2,
+      "row": 1,
+      "uv_offset": [0.5, 0.0],
+      "gltf_uv_offset": [0.5, 0.5],
+      "note": "Ojos cerrados neutros; cejas y boca identicas a neutro. Primeras seis celdas sin cambios."
+    },
+    {
+      "index": 7,
+      "name": "libre_07",
+      "column": 3,
+      "row": 1,
+      "uv_offset": [0.75, 0.0],
+      "gltf_uv_offset": [0.75, 0.5]
+    }
+  ],
+  "anchors_cell_pixels": {
+    "left_eye": [135, 282],
+    "right_eye": [377, 282],
+    "mouth": [256, 345]
+  },
+  "color": "straight RGBA; transparent background; soft antialias; no baked pixelation",
+  "gltf_uv_origin": "top-left; GLTFLoader textures use flipY=false",
+  "gltf_offset_formula": ["column / 4", "row / 2"],
+  "blink_cell": 6
+}

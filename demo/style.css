@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  color: #1d1b19;
+  background: #fff;
+  font-family:
+    ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+}
+body {
+  margin: 0;
+}
+button,
+textarea {
+  font: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+button,
+a,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline: 2px solid #756049;
+  outline-offset: 4px;
+}
+.masthead {
+  max-width: 1560px;
+  margin: auto;
+  padding: 26px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.wordmark {
+  display: block;
+}
+.wordmark img {
+  display: block;
+  width: 138px;
+  height: auto;
+}
+footer nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 26px;
+  font-size: 12px;
+}
+footer a,
+.pending-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+footer svg {
+  flex-shrink: 0;
+}
+.pending-link {
+  color: #b3aca5;
+}
+.playground {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 32px;
+  padding: 0 40px 28px;
+  align-items: center;
+  min-height: calc(100svh - 154px);
+}
+.character-stage {
+  position: relative;
+  height: min(76svh, 820px);
+  min-height: 490px;
+  overflow: hidden;
+}
+.character-stage canvas {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+.stage-status {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  background: #fff;
+}
+.controls {
+  padding: 22px 0;
+}
+#speech {
+  display: block;
+  resize: vertical;
+  width: 100%;
+  min-height: 86px;
+  max-height: 190px;
+  border-radius: var(--dial-radius);
+  padding: 12px;
+  background: var(--dial-surface);
+  line-height: 17px;
+  text-align: left;
+}
+#speech:focus-visible {
+  outline: 2px solid var(--dial-text-tertiary);
+  outline-offset: 2px;
+}
+.actions {
+  display: flex;
+  gap: 6px;
+  margin: 10px 0 24px;
+}
+.actions button {
+  position: relative;
+  height: var(--dial-row-height);
+}
+.actions button::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+}
+.actions .speak {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  line-height: 17px;
+  background: #000;
+  color: #fff;
+}
+.actions .speak:hover {
+  background: #1a1a1a;
+}
+.actions .speak:active {
+  background: #000;
+}
+.voice-dials {
+  min-width: 0;
+}
+.voice-dials .dialkit-root[data-theme="light"] {
+  --dial-glass-bg: #fff;
+}
+.voice-dials .dialkit-panel {
+  width: 100%;
+  max-width: none;
+}
+.voice-dials .dialkit-panel-inner.dialkit-panel-inline {
+  padding-left: 0;
+  padding-right: 0;
+}
+footer {
+  max-width: 1560px;
+  padding: 18px 40px 26px;
+  margin: auto;
+  color: #938a80;
+  font-size: 11px;
+  display: flex;
+  gap: 4px;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 850px) {
+  .masthead {
+    padding: 20px 22px;
+  }
+  footer nav {
+    gap: 16px;
+    font-size: 11px;
+  }
+  .playground {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 22px;
+  }
+  .character-stage {
+    height: 52svh;
+    min-height: 380px;
+    max-height: 580px;
+  }
+  .controls {
+    width: min(100%, 420px);
+    margin: 0 auto;
+  }
+  footer {
+    padding: 24px 22px;
+  }
+}
